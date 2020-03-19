@@ -14,30 +14,15 @@ try {
         if (breakingChange.sourceSpecEntityDetails) {
           breakingChange.sourceSpecEntityDetails.forEach(
             sourceSpecEntityDetail => {
-              if (
-                sourceSpecEntityDetail.location &&
-                sourceSpecEntityDetail.value
-              ) {
-                breakingChanges.push({
-                  location: sourceSpecEntityDetail.location
-                });
+              if (sourceSpecEntityDetail.location) {
+                breakingChanges.push(sourceSpecEntityDetail.location);
               }
             }
           );
         }
       });
     }
-
-    let returnValue = '| Path |\n|-------------|\n|';
-
-    if (breakingChanges.length == 0) {
-      returnValue += ` N/A | No breaking changes reported `;
-    } else {
-      breakingChanges.forEach(change => {
-        returnValue += `${change.location} |\n`;
-      });
-    }
-    core.setOutput('openapidiffmarkdown', returnValue);
+    core.setOutput('endpoints', breakingChanges);
   } else {
     throw 'Invalid input please send JSON!';
   }

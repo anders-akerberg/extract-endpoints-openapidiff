@@ -6,8 +6,8 @@ inputs:
     description: "The open api diff as string"
     required: true
 outputs:
-  openapidiffmarkdown:
-    description: "Endpoints in markdown table format"
+  endpoints:
+    description: "Endpoints that a part of breaking changes"
 runs:
   using: "node12"
   main: "index.js"
