@@ -17,7 +17,9 @@ try {
           breakingChange.sourceSpecEntityDetails.forEach(
             sourceSpecEntityDetail => {
               if (sourceSpecEntityDetail.location) {
-                breakingChanges += sourceSpecEntityDetail.location + '\n';
+                let location = sourceSpecEntityDetail.location;
+                location = location.replace('paths', '');
+                breakingChanges += location + '\n';
               }
             }
           );
