@@ -19,7 +19,7 @@ try {
               if (sourceSpecEntityDetail.location) {
                 let location = sourceSpecEntityDetail.location;
                 location = location.replace('paths', '');
-                breakingChanges += location + '\n';
+                breakingChanges += JSON.stringify(location, null, 4) + '\n';
               }
             }
           );
