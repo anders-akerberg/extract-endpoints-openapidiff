@@ -27,6 +27,7 @@ try {
         }
       });
     }
+
     let returnValue = '| Path |\n|-------------|\n|';
 
     if (breakingChanges.length == 0) {
