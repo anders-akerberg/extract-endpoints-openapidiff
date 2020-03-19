@@ -28,14 +28,14 @@ try {
         }
       });
     }
-    const returnValue = '| Path | Value |\n|-------------|-------------|\n|';
+    let returnValue = '| Path | Value |\n|-------------|-------------|\n|';
 
     if (breakingChanges.length == 0) {
       returnValue += ` N/A | No breaking changes reported `;
     } else {
       breakingChanges.forEach(change => {
         returnValue += `${change.location} | ${JSON.stringify(
-          change.location,
+          change.value,
           null,
           4
         )} |\n`;
