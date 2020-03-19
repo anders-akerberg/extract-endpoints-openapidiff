@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 try {
-  const openapidiff = core.getInput('openapidiff');
+  let openapidiff = core.getInput('openapidiff');
   if (openapidiff && openapidiff.length > 0) {
     openapidiff = openapidiff.replace(
       'Breaking changes found between the two specifications:',
