@@ -1,0 +1,16 @@
+name: "oas-vital-info"
+author: "Anders Akerberg"
+description: "Extact breaking changes endpoints from open api diff"
+inputs:
+  openapidiff:
+    description: "The open api diff as string"
+    required: true
+outputs:
+  openapidiffmarkdown:
+    description: "Endpoints in markdown table format"
+runs:
+  using: "node12"
+  main: "index.js"
+branding:
+  icon: "search"
+  color: gray-dark
